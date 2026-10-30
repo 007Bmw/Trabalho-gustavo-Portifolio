@@ -1,0 +1,534 @@
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="description" content="Portfólio de João Henrique — Estudante de Desenvolvimento Back-End, 2º B Técnico em TI. Criando experiências digitais únicas através da tecnologia.">
+  <meta name="author" content="João Henrique">
+  <meta property="og:title" content="João Henrique — Desenvolvedor Back-End">
+  <meta property="og:description" content="Criando experiências digitais únicas através da tecnologia.">
+  <meta property="og:type" content="website">
+  <title>João Henrique — Estudante de Desenvolvimento Back-End</title>
+
+  <!-- Fontes: Poppins ExtraBold (títulos) + Inter (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Cpath d='M9 22V10h3v4.6h4V10h3v12h-3v-4.6h-4V22H9z' fill='%2300E5FF'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- ================= PRELOADER ================= -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__mark">JH<span>.</span></div>
+      <div class="preloader__bar"><span id="preloaderBar"></span></div>
+      <p class="preloader__text">Inicializando sistema<span class="dots"></span></p>
+    </div>
+  </div>
+
+  <!-- ================= CURSOR PERSONALIZADO ================= -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- ================= BARRA DE PROGRESSO DE SCROLL ================= -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ================= BACKGROUND GLOBAL ================= -->
+  <div class="bg-layer" aria-hidden="true">
+    <canvas id="particles"></canvas>
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--cyan"></div>
+    <div class="bg-glow bg-glow--violet"></div>
+    <div class="bg-noise"></div>
+  </div>
+
+  <!-- ================= HEADER / NAVEGAÇÃO ================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo" aria-label="Ir para o início">
+        <span class="logo__mark">JH</span>
+        <span class="logo__text">João&nbsp;Henrique</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link is-active" href="#home" data-nav="home"><span>01.</span> Início</a></li>
+          <li><a class="nav__link" href="#sobre" data-nav="sobre"><span>02.</span> Sobre</a></li>
+          <li><a class="nav__link" href="#habilidades" data-nav="habilidades"><span>03.</span> Skills</a></li>
+          <li><a class="nav__link" href="#projetos" data-nav="projetos"><span>04.</span> Projetos</a></li>
+          <li><a class="nav__link" href="#jornada" data-nav="jornada"><span>05.</span> Jornada</a></li>
+          <li><a class="nav__link" href="#contato" data-nav="contato"><span>06.</span> Contato</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://github.com/Bmwm3competition" target="_blank" rel="noopener noreferrer" class="btn btn--ghost header__cta">GitHub</a>
+
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+
+        <div class="hero__content">
+          <div class="hero__badge reveal">
+            <span class="pulse-dot"></span>
+            Disponível para novos projetos
+          </div>
+
+          <p class="hero__eyebrow reveal" style="--d:.05s">
+            <span class="mono">&lt;/&gt;</span> 2º B · Técnico em TI
+          </p>
+
+          <h1 class="hero__title reveal" style="--d:.1s">
+            João<br>
+            <span class="gradient-text">Henrique</span>
+          </h1>
+
+          <h2 class="hero__role reveal" style="--d:.15s">
+            <span class="hero__typing" id="typing" aria-live="polite"></span><span class="caret" aria-hidden="true"></span>
+          </h2>
+
+          <p class="hero__phrase reveal" style="--d:.2s">
+            “Criando experiências digitais únicas através da tecnologia.”
+          </p>
+
+          <div class="hero__actions reveal" style="--d:.25s">
+            <a href="#projetos" class="btn btn--primary magnetic">
+              Ver projetos
+            </a>
+            <a href="#contato" class="btn btn--outline magnetic">Entrar em contato</a>
+          </div>
+
+          <dl class="hero__stats reveal" style="--d:.3s">
+            <div class="stat">
+              <dt>Repositórios</dt>
+              <dd><span class="counter" data-target="17">0</span></dd>
+            </div>
+            <div class="stat">
+              <dt>Projetos no site</dt>
+              <dd><span class="counter" data-target="3">0</span></dd>
+            </div>
+            <div class="stat">
+              <dt>Dedicação</dt>
+              <dd><span class="counter" data-target="100">0</span>%</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Cartão terminal -->
+        <div class="hero__visual reveal" style="--d:.2s" aria-hidden="true">
+          <div class="orb" data-parallax="0.03"></div>
+          <div class="terminal tilt">
+            <div class="terminal__bar">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--yellow"></span>
+              <span class="dot dot--green"></span>
+              <span class="terminal__title">developer.js — bash</span>
+            </div>
+            <pre class="terminal__body"><code><span class="c-key">const</span> <span class="c-var">joao</span> = {
+  <span class="c-prop">nome</span>: <span class="c-str">'João Henrique'</span>,
+  <span class="c-prop">turma</span>: <span class="c-str">'2º B — Técnico em TI'</span>,
+  <span class="c-prop">cargo</span>: <span class="c-str">'Dev Back-End'</span>,
+  <span class="c-prop">foco</span>: [<span class="c-str">'APIs'</span>, <span class="c-str">'Banco de Dados'</span>],
+  <span class="c-prop">stack</span>: [<span class="c-str">'Node'</span>, <span class="c-str">'Python'</span>, <span class="c-str">'SQL'</span>],
+  <span class="c-fn">construir</span>() {
+    <span class="c-key">return</span> <span class="c-str">'experiências únicas'</span>;
+  }
+};<span class="terminal__prompt">$ <span class="terminal__blink">_</span></span></code></pre>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="#sobre" class="scroll-hint" aria-label="Rolar para a próxima seção">
+        <span class="scroll-hint__line"></span>
+        <span class="scroll-hint__text">scroll</span>
+      </a>
+    </section>
+
+    <!-- ================= SOBRE ================= -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__index mono">02</span>
+          <h2 class="section__title">Sobre <span class="gradient-text">mim</span></h2>
+          <p class="section__desc">Um pouco da pessoa por trás do código.</p>
+        </header>
+
+        <div class="about">
+          <div class="about__text">
+            <p class="reveal">
+              Olá! Sou <strong>João Henrique</strong>, estudante do <strong>2º B do Técnico em TI</strong>
+              e apaixonado por desenvolvimento <strong>back-end</strong>. Gosto de entender como as coisas
+              funcionam por baixo dos panos — das requisições HTTP à modelagem de um banco de dados.
+            </p>
+            <p class="reveal" style="--d:.05s">
+              Minha rotina é dividida entre a sala de aula, projetos pessoais e muita prática:
+              escrever código, quebrar a cabeça com um bug, refatorar e aprender algo novo no processo.
+              Acredito que boa tecnologia é invisível para o usuário e impecável nos bastidores.
+            </p>
+            <p class="reveal" style="--d:.1s">
+              Meu objetivo é evoluir como desenvolvedor, colaborar em projetos reais e construir
+              sistemas <strong>rápidos, seguros e bem estruturados</strong>.
+            </p>
+
+            <ul class="about__list reveal" style="--d:.15s">
+              <li>Lógica de programação e estruturas de dados</li>
+              <li>APIs REST e integração com bancos de dados</li>
+              <li>Versionamento com Git e GitHub</li>
+              <li>Interfaces limpas com HTML, CSS e JavaScript puro</li>
+            </ul>
+
+            <div class="about__actions reveal" style="--d:.2s">
+              <a href="https://github.com/Bmwm3competition" target="_blank" rel="noopener noreferrer" class="btn btn--primary magnetic">
+                Perfil no GitHub
+              </a>
+              <a href="#contato" class="btn btn--outline magnetic">Vamos conversar</a>
+            </div>
+          </div>
+
+          <aside class="about__card reveal" style="--d:.1s">
+            <div class="card profile-card tilt">
+              <div class="profile-card__avatar" aria-hidden="true">
+                <span>JH</span>
+                <i class="profile-card__ring"></i>
+              </div>
+              <h3 class="profile-card__name">João Henrique</h3>
+              <p class="profile-card__role">Estudante de Desenvolvimento Back-End</p>
+
+              <ul class="profile-card__meta">
+                <li><span>Turma</span><strong>2º B Técnico em TI</strong></li>
+                <li><span>Local</span><strong>Brasil</strong></li>
+                <li><span>Status</span><strong class="text-ok">Disponível</strong></li>
+                <li><span>Foco</span><strong>Back-End</strong></li>
+              </ul>
+
+              <div class="profile-card__footer">
+                <span class="mono">~/portfolio</span>
+                <span class="mono">v1.0</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HABILIDADES ================= -->
+    <section class="section section--alt" id="habilidades">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__index mono">03</span>
+          <h2 class="section__title">Minhas <span class="gradient-text">habilidades</span></h2>
+          <p class="section__desc">Ferramentas e tecnologias que uso para construir soluções.</p>
+        </header>
+
+        <div class="skills">
+          <div class="skills__bars">
+            <div class="skill reveal">
+              <div class="skill__head"><span>HTML5 &amp; CSS3</span><span class="mono">90%</span></div>
+              <div class="skill__track"><span class="skill__fill" data-level="90"></span></div>
+            </div>
+            <div class="skill reveal" style="--d:.05s">
+              <div class="skill__head"><span>JavaScript</span><span class="mono">82%</span></div>
+              <div class="skill__track"><span class="skill__fill" data-level="82"></span></div>
+            </div>
+            <div class="skill reveal" style="--d:.1s">
+              <div class="skill__head"><span>Lógica &amp; Algoritmos</span><span class="mono">88%</span></div>
+              <div class="skill__track"><span class="skill__fill" data-level="88"></span></div>
+            </div>
+            <div class="skill reveal" style="--d:.15s">
+              <div class="skill__head"><span>Node.js</span><span class="mono">72%</span></div>
+              <div class="skill__track"><span class="skill__fill" data-level="72"></span></div>
+            </div>
+            <div class="skill reveal" style="--d:.2s">
+              <div class="skill__head"><span>Python</span><span class="mono">76%</span></div>
+              <div class="skill__track"><span class="skill__fill" data-level="76"></span></div>
+            </div>
+            <div class="skill reveal" style="--d:.25s">
+              <div class="skill__head"><span>Banco de Dados (SQL)</span><span class="mono">78%</span></div>
+              <div class="skill__track"><span class="skill__fill" data-level="78"></span></div>
+            </div>
+            <div class="skill reveal" style="--d:.3s">
+              <div class="skill__head"><span>Git &amp; GitHub</span><span class="mono">85%</span></div>
+              <div class="skill__track"><span class="skill__fill" data-level="85"></span></div>
+            </div>
+          </div>
+
+          <div class="skills__cards">
+            <article class="card tech-card reveal tilt" style="--d:.05s">
+              <h3>Front-End</h3>
+              <p>HTML5, CSS3, JavaScript ES6+, animações, responsividade e acessibilidade.</p>
+              <div class="chips">
+                <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JS</span>
+              </div>
+            </article>
+
+            <article class="card tech-card reveal tilt" style="--d:.1s">
+              <h3>Back-End</h3>
+              <p>Node.js, Python, APIs REST, autenticação, regras de negócio e arquitetura.</p>
+              <div class="chips">
+                <span class="chip">Node</span><span class="chip">Python</span><span class="chip">REST</span>
+              </div>
+            </article>
+
+            <article class="card tech-card reveal tilt" style="--d:.15s">
+              <h3>Dados</h3>
+              <p>Modelagem relacional, MySQL, consultas SQL e integração com aplicações.</p>
+              <div class="chips">
+                <span class="chip">MySQL</span><span class="chip">SQL</span>
+              </div>
+            </article>
+
+            <article class="card tech-card reveal tilt" style="--d:.2s">
+              <h3>Ferramentas</h3>
+              <p>Git, GitHub, VS Code, terminal Linux e boas práticas de versionamento.</p>
+              <div class="chips">
+                <span class="chip">Git</span><span class="chip">Linux</span><span class="chip">VS Code</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJETOS ================= -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__index mono">04</span>
+          <h2 class="section__title">Projetos <span class="gradient-text">selecionados</span></h2>
+          <p class="section__desc">Repositórios e trabalhos publicados no meu GitHub.</p>
+        </header>
+
+        <div class="filters reveal" role="tablist" aria-label="Filtrar projetos">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+          <button class="filter" data-filter="backend" role="tab" aria-selected="false">Back-End</button>
+          <button class="filter" data-filter="frontend" role="tab" aria-selected="false">Front-End</button>
+        </div>
+
+        <div class="projects" id="projectsGrid">
+
+          <article class="project card reveal" data-category="backend">
+            <a class="project__link" href="https://github.com/Bmwm3competition/Trabalho-Sky-fit"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Abrir o repositório Sky Fit API no GitHub, em nova aba">
+              <span class="project__tag mono">API REST</span>
+              <h3 class="project__title">Sky Fit API</h3>
+              <p class="project__desc">
+                API de gestão de alunos para academia, com CRUD completo (listar, cadastrar,
+                atualizar e excluir), respostas em JSON e organização em rotas, controllers,
+                models e banco de dados.
+              </p>
+              <span class="project__tech mono">Node.js · Express · SQLite</span>
+              <span class="project__cta mono">Abrir repositório</span>
+            </a>
+          </article>
+
+          <article class="project card reveal" data-category="backend" style="--d:.05s">
+            <a class="project__link" href="https://github.com/Bmwm3competition/Aula-Kaua-da-r15-"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Abrir o repositório API de Carros com Flask no GitHub, em nova aba">
+              <span class="project__tag mono">API REST</span>
+              <h3 class="project__title">API de Carros — Flask</h3>
+              <p class="project__desc">
+                API para cadastro e consulta de veículos construída em Python com Flask e
+                SQLAlchemy sobre SQLite, usando blueprints para as rotas e testes de POST
+                e GET feitos no Postman.
+              </p>
+              <span class="project__tech mono">Python · Flask · SQLAlchemy</span>
+              <span class="project__cta mono">Abrir repositório</span>
+            </a>
+          </article>
+
+          <article class="project card reveal" data-category="frontend" style="--d:.1s">
+            <a class="project__link" href="https://github.com/Bmwm3competition/Govlab-site-"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Abrir o repositório GovCo-Lab no GitHub, em nova aba">
+              <span class="project__tag mono">Site</span>
+              <h3 class="project__title">GovCo-Lab</h3>
+              <p class="project__desc">
+                Plataforma de governo colaborativo em página única: o cidadão registra
+                sugestões, acompanha o andamento do chamado, vota nas prioridades e o
+                painel do prefeito mostra o ranking por bairro.
+              </p>
+              <span class="project__tech mono">HTML · CSS · JavaScript</span>
+              <span class="project__cta mono">Abrir repositório</span>
+            </a>
+          </article>
+
+        </div>
+
+        <p class="projects__empty" id="projectsEmpty" hidden>Nenhum projeto nesta categoria ainda.</p>
+      </div>
+    </section>
+
+    <!-- ================= JORNADA ================= -->
+    <section class="section section--alt" id="jornada">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__index mono">05</span>
+          <h2 class="section__title">Minha <span class="gradient-text">jornada</span></h2>
+          <p class="section__desc">A linha do tempo da minha evolução na tecnologia.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <span class="timeline__dot"></span>
+            <div class="card timeline__card">
+              <span class="timeline__date mono">2022</span>
+              <h3>Primeiro contato com programação</h3>
+              <p>Início da curiosidade por tecnologia e lógica: os primeiros algoritmos, variáveis e estruturas de repetição.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" style="--d:.05s">
+            <span class="timeline__dot"></span>
+            <div class="card timeline__card">
+              <span class="timeline__date mono">2025</span>
+              <h3>Ingresso no Técnico em TI</h3>
+              <p>Começo da formação técnica: redes, sistemas operacionais, banco de dados e desenvolvimento web.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" style="--d:.1s">
+            <span class="timeline__dot"></span>
+            <div class="card timeline__card">
+              <span class="timeline__date mono">2026</span>
+              <h3>Foco em Back-End</h3>
+              <p>Aprofundamento em Node.js, Python, APIs REST e modelagem de dados, com os primeiros projetos completos publicados no GitHub.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" style="--d:.15s">
+            <span class="timeline__dot timeline__dot--now"></span>
+            <div class="card timeline__card timeline__card--now">
+              <span class="timeline__date mono">Hoje</span>
+              <h3>Final do 2º ano B</h3>
+              <p>Fechando o 2º ano do Técnico em TI: desenvolvendo projetos pessoais, estudando boas práticas de código e em busca da primeira oportunidade profissional na área.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section class="section" id="contato">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__index mono">06</span>
+          <h2 class="section__title">Vamos <span class="gradient-text">conversar</span></h2>
+          <p class="section__desc">Aberto a projetos, parcerias e oportunidades de aprendizado.</p>
+        </header>
+
+        <div class="contact">
+          <div class="contact__info reveal">
+            <h3 class="contact__title">Tem uma ideia?<br>Vamos tirar do papel.</h3>
+            <p class="contact__text">
+              Preencha o formulário ou me encontre nas redes. Respondo o mais rápido possível —
+              e estou sempre aberto a trocar ideia sobre código, estudos e tecnologia.
+            </p>
+
+            <ul class="contact__list">
+              <li class="contact__item">
+                <span class="contact__label">E-mail</span>
+                <a href="mailto:joaoparedes34@gmail.com">joaoparedes34@gmail.com</a>
+              </li>
+              <li class="contact__item">
+                <span class="contact__label">GitHub</span>
+                <a href="https://github.com/Bmwm3competition" target="_blank" rel="noopener noreferrer">@Bmwm3competition</a>
+              </li>
+              <li class="contact__item">
+                <span class="contact__label">Localização</span>
+                <span>Campinas — SP, Brasil</span>
+              </li>
+            </ul>
+
+            <a href="https://github.com/Bmwm3competition" target="_blank" rel="noopener noreferrer" class="btn btn--ghost magnetic">
+              Seguir no GitHub
+            </a>
+          </div>
+
+          <form class="card contact__form reveal" id="contactForm" novalidate style="--d:.1s">
+            <div class="field">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" placeholder="Seu nome completo" autocomplete="name" required minlength="2">
+              <span class="field__error" data-error-for="name"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="email" required>
+              <span class="field__error" data-error-for="email"></span>
+            </div>
+
+            <div class="field">
+              <label for="subject">Assunto</label>
+              <input type="text" id="subject" name="subject" placeholder="Projeto, dúvida, oportunidade..." required minlength="3">
+              <span class="field__error" data-error-for="subject"></span>
+            </div>
+
+            <div class="field">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="5" placeholder="Conte um pouco sobre a sua ideia..." required minlength="10"></textarea>
+              <span class="field__error" data-error-for="message"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block magnetic" id="submitBtn">
+              <span class="btn__label">Enviar mensagem</span>
+            </button>
+
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="logo">
+          <span class="logo__mark">JH</span>
+          <span class="logo__text">João&nbsp;Henrique</span>
+        </a>
+        <p class="footer__phrase">“Criando experiências digitais únicas através da tecnologia.”</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Links do rodapé">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Skills</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#jornada">Jornada</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://github.com/Bmwm3competition" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:joaoparedes34@gmail.com">E-mail</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> João Henrique</p>
+    </div>
+  </footer>
+
+  <!-- Botão voltar ao topo -->
+  <button class="to-top" id="toTop" aria-label="Voltar ao topo">topo</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
